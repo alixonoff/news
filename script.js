@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let cart = [];
   const botToken = "7885084406:AAHokrNIPMZ_nkUdjgc5_cE6olmgpsVeZuI"; // Bot token
-  const chatId = "YOUR_CHAT_ID"; // Olingan chat ID
+  const chatId = "6407200891"; // Olingan chat ID
 
   // "+" va "-" tugmachalari uchun event listener
   document.querySelectorAll(".btnPlus").forEach((btn) => {
@@ -35,9 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", function () {
       const productCard = btn.parentElement;
       const productName = productCard.querySelector("h2").textContent;
-      const productPriceString = productCard.querySelector("b").textContent.replace(/[^\d]/g, "");
+      const productPriceString = productCard
+        .querySelector("b")
+        .textContent.replace(/[^\d]/g, "");
       const productPrice = parseInt(productPriceString, 10);
-      const quantity = parseInt(productCard.querySelector(".quantity").textContent, 10);
+      const quantity = parseInt(
+        productCard.querySelector(".quantity").textContent,
+        10
+      );
 
       if (quantity > 0) {
         const product = {
@@ -47,7 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
           totalPrice: productPrice * quantity,
         };
 
-        const existingProductIndex = cart.findIndex(item => item.name === product.name);
+        const existingProductIndex = cart.findIndex(
+          (item) => item.name === product.name
+        );
         if (existingProductIndex !== -1) {
           cart[existingProductIndex].quantity += product.quantity;
           cart[existingProductIndex].totalPrice += product.totalPrice;
@@ -80,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     totalLi.textContent = `Jami: ${totalPrice} so'm`;
     cartItems.appendChild(totalLi);
 
-    // Buyurtma yuborish tugmasini qo'shish
+    // Buyurtma yuborish tugmasi
     const orderButton = document.createElement("button");
     orderButton.textContent = "Buyurtmani Yuborish";
     orderButton.classList.add("order-button");
@@ -99,7 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cart.forEach((item) => {
       message += `${item.name} - ${item.quantity} dona - ${item.totalPrice} so'm\n`;
     });
-    message += `\nJami summa: ${cart.reduce((total, item) => total + item.totalPrice, 0)} so'm`;
+    message += `\nJami summa: ${cart.reduce(
+      (total, item) => total + item.totalPrice,
+      0
+    )} so'm`;
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",
