@@ -1,0 +1,279 @@
+/* Barcha elementlarga umumiy stil */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header uchun stil */
+header {
+    height: 150px;
+    background-color: dodgerblue;
+    display: flex;
+    align-items: center;
+}
+
+/* Konteyner uchun stil */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo uchun stil */
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Qidiruv qutisi uchun stil */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    width: 85%;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar button {
+    width: 15%;
+    height: 45px;
+    border: none;
+    background: #008cba;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #005f87;
+}
+
+/* Savatcha tugmasi uchun stil */
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Kartalar uchun stil */
+.carts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btnSanoq {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.btnSanoq button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.btnSanoq span {
+    width: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btnAddToCart {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #008cba;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btnAddToCart:hover {
+    background-color: #005f87;
+}
+
+/* Savat modal oynasi uchun stil */
+.cart-modal {
+    display: none; /* Boshida ko'rinmasin */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.close-cart {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.close-cart:hover {
+    background: #c9302c;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carts {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Optional max width */
+    }
+
+    .search-bar input {
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .card img {
+        height: 150px; /* Reduce image size for mobile */
+    }
+
+    .btnAddToCart {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

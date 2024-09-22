@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qidiruv Sayti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Qidiryotgan mahsulotingizni kiriting">
+                <button class="btnSearch">🔎</button>
+            </div>
+            <button class="cart-btn">
+                <img src="./img/korzinka.png" alt="Savatcha">
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="carts">
+                <div class="card">
+                    <img src="./img/milterYog.jpg" alt="Milter yog' 1liter">
+                    <h2>Milter yog' 1liter</h2>
+                    <div class="btnSanoq">
+                        <button class="btnPlus">+</button>
+                        <span class="quantity">0</span>
+                        <button class="btnMinus">-</button>
+                    </div>
+                    <b>Narxi: 22000</b>
+                    <button class="btnAddToCart">Savatga qo'shish</button>
+                </div>
+                <div class="card">
+                    <img src="./img/milterMoyonez.jpg" alt="Mayonez “Provansal” 67 % 770 gr">
+                    <h2>Mayonez “Provansal” 67 % 770 gr</h2>
+                    <div class="btnSanoq">
+                        <button class="btnPlus">+</button>
+                        <span class="quantity">0</span>
+                        <button class="btnMinus">-</button>
+                    </div>
+                    <b>Narxi: 19900</b>
+                    <button class="btnAddToCart">Savatga qo'shish</button>
+                </div>
+                <div class="card">
+                    <img src="./img/milterMoyanez.jpg" alt="Milter Mayonez "Provansal 67 %", 190 gr">
+                    <h2>Milter Mayonez "Provansal 67 %", 190 g</h2>
+                    <div class="btnSanoq">
+                        <button class="btnPlus">+</button>
+                        <span class="quantity">0</span>
+                        <button class="btnMinus">-</button>
+                    </div>
+                    <b>Narxi: 10000</b>
+                    <button class="btnAddToCart">Savatga qo'shish</button>
+                </div>
+                <div class="card">
+                    <img src="./img/milterChili.jpg" alt="Milter Mayonez "chili">
+                    <h2>Milter sous Chili 200gm</h2>
+                    <div class="btnSanoq">
+                        <button class="btnPlus">+</button>
+                        <span class="quantity">0</span>
+                        <button class="btnMinus">-</button>
+                    </div>
+                    <b>Narxi: 7000</b>
+                    <button class="btnAddToCart">Savatga qo'shish</button>
+                </div>
+                <!-- Yangi mahsulotlarni shu yerda qo'shishingiz mumkin -->
+            </div>
+        </div>
+    </section>
+    <div class="cart-modal">
+        <div class="modal-content">
+            <h3>Savatdagi Mahsulotlar</h3>
+            <ul class="cart-items"></ul>
+            <button class="close-cart">Yopish</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
